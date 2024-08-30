@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="https://opticacristalsanmiguel.com.ar/img/logo_muy_chico_sinfondo.png" type="image/x-icon">
+        <title>Óptica Cristal</title>
+        <!-- SweetAlert -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    
+<body>
+    <header>
+        <h1>Óptica Cristal</h1>
+    </header>
+    <main>
+        <section id="productos"></section>
+        <div id="carrito-flotante" onclick="mostrarCarrito()">
+            🛒 <span id="cantidad-carrito">0</span>
+        </div>
+    </main>
+
+    <!-- Modal de producto -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+
+    <!-- Modal del carrito -->
+    <div id="carrito-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <ul id="lista-carrito"></ul>
+            <p id="total"></p>
+            <button id="seguir-comprando">Seguir Comprando</button>
+            <button id="finalizar-compra">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
