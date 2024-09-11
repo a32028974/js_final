@@ -6,21 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function cargarProductos() {
-    setTimeout(() => {
-        productosSimulados = [
-            { nombre: "Lente recetado", precio: 50000, img: "img/lente_recetado.jpg" },
-            { nombre: "Lente de sol", precio: 15000, img: "img/lente_sol.jpg" },
-            { nombre: "Lentes de contacto", precio: 20000, img: "img/lentes_contacto.jpg" },
-            { nombre: "Lentes polarizados", precio: 25000, img: "img/lentes_polarizados.jpg" },
-            { nombre: "Reparacion de anteojo", precio: 300, img: "img/reparacion_anteojo.jpg" },
-            { nombre: "Sujetador", precio: 3500, img: "img/sujetador.jpg" },
-            { nombre: "Patilla de anteojo", precio: 4000, img: "img/patilla_anteojo.jpg" },
-            { nombre: "Limpia cristales", precio: 4050, img: "img/limpia_cristales.jpg" },
-            { nombre: "Estuche de antojos de sol", precio: 2500, img: "img/estuche_sol.jpg" },
-            { nombre: "Estuche de anteojo de receta", precio: 3550, img: "img/estuche_receta.jpg" }
-        ];
-        mostrarProductos(productosSimulados);
-    }, 500);
+    fetch('js/productos.json')
+        .then(response => response.json())
+        .then(data => {
+            productosSimulados = data;
+            mostrarProductos(productosSimulados);
+        })
+        .catch(error => console.error('Error al cargar los productos:', error));
 }
 
 function mostrarProductos(productos) {
